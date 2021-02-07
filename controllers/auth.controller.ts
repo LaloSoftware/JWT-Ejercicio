@@ -12,7 +12,6 @@ export const signUp = async (req: Request, res: Response) => {
         const rolesEncontrados = await rol.find({nombre: {$in: roles}});
         const idRoles = rolesEncontrados.map( r => r._id );
         const newPassword = await encryptPassword(password);
-        console.log(newPassword);
         const nuevoUsuario = new Usuario({
             userName,
             email, 
@@ -20,7 +19,6 @@ export const signUp = async (req: Request, res: Response) => {
             roles: idRoles
         });
         const usuarioGuardado = await nuevoUsuario.save();
-        console.log(usuarioGuardado);
         const token = jwt.sign({id: usuarioGuardado._id}, config.SECRET, { expiresIn: 86400 })
         res.json({token})
     } catch (err) {
