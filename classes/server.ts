@@ -1,7 +1,4 @@
 import express from 'express';
-import morgan from 'morgan';
-import { createRoles } from '../libs/initialSetUp';
-
 export default class Server{
     public app: express.Application;
     public port: number;

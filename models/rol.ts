@@ -6,4 +6,5 @@ const rolSchema = new Schema({
     versionKey: false
 });
 
+export const ROLES = ["admin", "moderador", "usuario"];
 export default model('Rol', rolSchema);
