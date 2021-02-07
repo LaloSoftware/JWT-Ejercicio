@@ -5,10 +5,10 @@ import { authJWT } from '../middlewares'
 
 const productsRoutes = Router();
 
-router.get('/productos', [authJWT.verifyToken, authJWT.isModerator, authJWT.isAdmin], productsController.obtenerProductos);
+router.get('/productos', [authJWT.verifyToken, authJWT.isModerator], productsController.obtenerProductos);
 router.get('/producto/:id', [authJWT.verifyToken], productsController.obtenerProducto);
-router.post('/producto', [authJWT.verifyToken], productsController.crearProducto);
-router.put('/producto/:id', [authJWT.verifyToken], productsController.actualizarProducto);
-router.delete('/producto/:id', [authJWT.verifyToken], productsController.eliminarProducto);
+router.post('/producto', [authJWT.verifyToken, authJWT.isAdmin], productsController.crearProducto);
+router.put('/producto/:id', [authJWT.verifyToken, authJWT.isModerator], productsController.actualizarProducto);
+router.delete('/producto/:id', [authJWT.verifyToken, authJWT.isAdmin], productsController.eliminarProducto);
 
 export default productsRoutes;
