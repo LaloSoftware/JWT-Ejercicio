@@ -1,5 +1,6 @@
 import express from 'express';
 import morgan from 'morgan';
+import { createRoles } from '../libs/initialSetUp';
 
 export default class Server{
     public app: express.Application;
@@ -8,6 +9,7 @@ export default class Server{
     constructor(port: number) {
         this.app = express();
         this.port = Number( process.env.PORT ) || port;
+
     }
 
     start(){
