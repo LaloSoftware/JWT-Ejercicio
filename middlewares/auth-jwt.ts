@@ -4,6 +4,9 @@ import config from '../config';
 import rol from '../models/rol';
 import Usuario from '../models/usuario'
 
+/**
+ * Métodos de verificación del token enviado por el usuario y rol asignado
+ */
 export const verifyToken = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const token = req.headers["x-access-token"];

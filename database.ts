@@ -1,5 +1,8 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose';    //módulo de conexión a mongo
 
+/*
+    Conexión a mongo y configuración inicial
+*/
 mongoose.connect('mongodb://localhost/testdb', {
     useNewUrlParser: true,
     useUnifiedTopology: true,

@@ -2,6 +2,10 @@ import { NextFunction, Request, Response } from "express";
 import { ROLES } from "../models/rol";
 import usuario from "../models/usuario";
 
+/*
+ * Validación de datos al registrar un usuario nuevo 
+ */
+
 export const verificarRoles = async (req: Request, res: Response, next: NextFunction) => {
     try {
         if (req.body.roles) {

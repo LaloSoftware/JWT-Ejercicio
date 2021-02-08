@@ -1,6 +1,9 @@
 import { Request, Response } from "express";
 import producto from "../models/producto";
 
+/*
+ * Método de obtención de productos 
+ */
 export const obtenerProductos = async (req: Request, res: Response) => {
     try {
         const productos = await producto.find();
@@ -18,6 +21,9 @@ export const obtenerProductos = async (req: Request, res: Response) => {
     }
 }
 
+/**
+ * Método de obtención de un producto
+ */
 export const obtenerProducto = async (req: Request, res: Response) => {
     try {
         const id: string = req.params.id;
@@ -33,6 +39,9 @@ export const obtenerProducto = async (req: Request, res: Response) => {
     }
 }
 
+/*
+ * Método de creación de productos
+ */
 export const crearProducto = async (req: Request, res: Response) => {
     try {
         const { name, category, price } = req.body;
@@ -48,6 +57,9 @@ export const crearProducto = async (req: Request, res: Response) => {
     }
 }
 
+/*
+ * Método de actualización de productos
+ */
 export const actualizarProducto = async (req: Request, res: Response) => {
     try {        
         const id: string = req.params.id;
@@ -64,6 +76,9 @@ export const actualizarProducto = async (req: Request, res: Response) => {
     }
 }
 
+/**
+ * Método para eliminar productos 
+ */
 export const eliminarProducto = async (req: Request, res: Response) => {
     try {
         const id: string = req.params.id;
