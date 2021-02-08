@@ -4,7 +4,8 @@
   "description": "Ejercicio de JWT",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "tsc -w",
+    "start": "node dist/" 
   },
   "repository": {
     "type": "git",
